@@ -35,14 +35,15 @@ public class CmdHandlerBuilder {
             List<SlashCommandPermissions> permissions, Server server, final CmdExecutor executor) {
         SlashCmd cmd = new SlashCmd(name, description == null ? "No description." : description,
                 options == null ? Optional.empty() : Optional.of(options),
-                permissions == null ? Optional.empty() : Optional.of(permissions), server == null ? Optional.empty() : Optional.of(server), executor);
+                permissions == null ? Optional.empty() : Optional.of(permissions),
+                server == null ? Optional.empty() : Optional.of(server), executor);
         slashCmds.add(cmd);
         return this;
     }
 
     public void build() {
         textCmds.forEach(cmd -> api.addMessageCreateListener(new TxtCmdEventManager(cmd)));
-        // TODO: slash command stuff.
+        slashCmds.forEach(cmd -> api.addSlashCommandCreateListener(new SlashCmdEventManager(api, cmd)));
     }
 
 }

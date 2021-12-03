@@ -2,7 +2,6 @@ package com.github.daflamingfox;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.javacord.api.entity.server.Server;
 import org.javacord.api.interaction.SlashCommandOption;
 import org.javacord.api.interaction.SlashCommandPermissions;
@@ -16,8 +15,14 @@ public class SlashCmd {
     private final String name;
     private final String description;
 
-    public SlashCmd(String name, String description, Optional<List<SlashCommandOption>> options, Optional<List<SlashCommandPermissions>> permissions,
-            Optional<Server> server, CmdExecutor executor) {
+    public SlashCmd(
+        String name,
+        String description,
+        Optional<List<SlashCommandOption>> options,
+        Optional<List<SlashCommandPermissions>> permissions,
+        Optional<Server> server,
+        CmdExecutor executor
+    ) {
         this.name = name;
         this.description = description;
         this.options = options;
@@ -49,5 +54,4 @@ public class SlashCmd {
     public CmdExecutor getExecutor() {
         return executor;
     }
-
 }

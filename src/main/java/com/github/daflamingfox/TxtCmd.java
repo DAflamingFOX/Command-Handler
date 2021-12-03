@@ -12,8 +12,15 @@ public class TxtCmd {
     private final String description;
     private final String usage;
 
-    public TxtCmd(String prefix, String keyword, String[] keywordAliases, CmdExecutor executor, DiscordApi api,
-            String description, String usage) {
+    public TxtCmd(
+        String prefix,
+        String keyword,
+        String[] keywordAliases,
+        CmdExecutor executor,
+        DiscordApi api,
+        String description,
+        String usage
+    ) {
         this.prefix = prefix;
         this.keyword = keyword;
         this.keywordAliases = keywordAliases;
@@ -50,6 +57,4 @@ public class TxtCmd {
     public String getUsage() {
         return usage;
     }
-
-
 }

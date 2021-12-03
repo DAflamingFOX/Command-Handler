@@ -1,7 +1,6 @@
 package com.github.daflamingfox;
 
 import java.util.Arrays;
-
 import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
 
@@ -25,7 +24,9 @@ public class TxtCmdEventManager implements MessageCreateListener {
         }
 
         // message without prefix
-        String commandMessage = event.getMessageContent().replaceFirst(command.getPrefix(), "");
+        String commandMessage = event
+            .getMessageContent()
+            .replaceFirst(command.getPrefix(), "");
         String[] args = commandMessage.split(" "); // split message into args
         String usedKeyword = args[0]; // first arg is the keyword
 
@@ -35,7 +36,11 @@ public class TxtCmdEventManager implements MessageCreateListener {
             cmdIsCalled = true;
         } else if (this.command.getKeywordAliases() != null) { // check if command has aliases
             // goes through all aliases and checks if the used keyword is an alias
-            if (Arrays.stream(this.command.getKeywordAliases()).anyMatch(str -> str.equalsIgnoreCase(usedKeyword))) {
+            if (
+                Arrays
+                    .stream(this.command.getKeywordAliases())
+                    .anyMatch(str -> str.equalsIgnoreCase(usedKeyword))
+            ) {
                 cmdIsCalled = true;
             }
         }
@@ -45,7 +50,5 @@ public class TxtCmdEventManager implements MessageCreateListener {
 
             this.command.getExecutor().textExecute(event, args);
         }
-
     }
-
 }

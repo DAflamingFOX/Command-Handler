@@ -1,0 +1,7 @@
+# Add 'repo' label to any root file changes
+repo:
+- '*'
+
+# Add 'src' label to any file in src folder
+source:
+- src/**/*

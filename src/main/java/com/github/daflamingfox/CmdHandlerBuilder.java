@@ -69,4 +69,8 @@ public class CmdHandlerBuilder {
             api.addSlashCommandCreateListener(new SlashCmdEventManager(api, cmd))
         );
     }
+
+    public String getPrefix() {
+        return prefix;
+    }
 }

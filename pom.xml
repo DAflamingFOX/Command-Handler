@@ -19,7 +19,7 @@
         <repository>
             <id>github</id>
             <name>GitHub DAflamingFOX Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/DAflamingFOX/command-handler</url>
+            <url>https://maven.pkg.github.com/DAflamingFOX/Command-Handler</url>
         </repository>
     </distributionManagement>
 
@@ -55,6 +55,7 @@
                 <version>0.16</version>
                 <executions>
                     <execution>
+                        <?m2e execute onConfiguration?>
                         <phase>validate</phase>
                         <goals>
                             <goal>${plugin.prettier.goal}</goal>

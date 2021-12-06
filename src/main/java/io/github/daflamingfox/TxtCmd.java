@@ -1,4 +1,4 @@
-package com.github.daflamingfox;
+package io.github.daflamingfox;
 
 import org.javacord.api.DiscordApi;
 

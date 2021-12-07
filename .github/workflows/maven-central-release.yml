@@ -30,7 +30,7 @@ jobs:
         gpg-key: GPG_SIGNING_KEY
 
     - name: Set version from tag
-      run: mvn -B mvn versions:set -DnewVersion=$GITHUB_REF --file pom.xml
+      run: mvn -B versions:set -DnewVersion=$GITHUB_REF --file pom.xml
 
     - name: Verify
       run: mvn -B verify --file pom.xml

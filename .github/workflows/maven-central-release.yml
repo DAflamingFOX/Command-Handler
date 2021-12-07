@@ -30,7 +30,7 @@ jobs:
         gpg-key: GPG_SIGNING_KEY
 
     - name: Import GPG Key
-      uses: crazy-max/ghaction-import-gpg@v1
+      uses: crazy-max/ghaction-import-gpg@v4.1.0
       with:
         gpg_private_key: ${{ secrets.GPG_SIGNING_KEY }}
         

@@ -27,6 +27,7 @@ jobs:
         server-id: ossrh # Value of the distributionManagement/repository/id field of the pom.xml
         server-username: MAVEN_USERNAME
         server-password: MAVEN_PASSWORD
+        gpg-key: GPG_SIGNING_KEY
 
     - name: Set version from tag
       run: mvn -B mvn versions:set -DnewVersion=$GITHUB_REF --file pom.xml
@@ -34,9 +35,15 @@ jobs:
     - name: Verify
       run: mvn -B verify --file pom.xml
       
+    - name: Import GPG Key
+      uses: crazy-max/ghaction-import-gpg@v1
+      env:
+        GPG_SIGNING_KEY: ${{ secrets.GPG_SIGNING_KEY }}
+      
     - name: Publish package
       run: mvn -B clean deploy -P release
       env:
         MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
         MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
+
         

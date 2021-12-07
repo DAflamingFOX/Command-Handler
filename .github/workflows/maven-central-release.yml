@@ -31,8 +31,8 @@ jobs:
 
     - name: Import GPG Key
       uses: crazy-max/ghaction-import-gpg@v1
-      env:
-        GPG_SIGNING_KEY: ${{ secrets.GPG_SIGNING_KEY }}
+      with:
+        gpg_private_key: ${{ secrets.GPG_SIGNING_KEY }}
         
     - name: Set version from tag
       run: mvn -B versions:set -DnewVersion=$GITHUB_REF --file pom.xml

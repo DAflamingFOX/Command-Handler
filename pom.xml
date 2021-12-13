@@ -2,13 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <name>${project.groupId}:${project.artifactId}</name>
+    <name>Command Handler</name>
     <description>A command handler for Javacord bots; designed to help manage and execute both text and slash commands uniformly.</description>
     <url>https://github.com/DAflamingFOX/Command-Handler</url>
 
     <groupId>io.github.daflamingfox</groupId>
     <artifactId>command-handler</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <licenses>
@@ -22,7 +22,7 @@
         <developer>
             <name>Jeffrey Morris</name>
             <email>ffejcsirrom@gmail.com</email>
-            <organization>${project.groupId}</organization>
+            <organization>io.github.daflamingfox</organization>
             <organizationUrl>https://github.com/DAflamingFOX</organizationUrl>
         </developer>
     </developers>
@@ -81,7 +81,6 @@
                         <inputGlob>src/test/java/**/*.java</inputGlob>
                     </inputGlobs>
                 </configuration>
-                <!-- Find the latest version at https://github.com/jhipster/prettier-java/releases -->
                 <version>0.16</version>
                 <executions>
                     <execution>

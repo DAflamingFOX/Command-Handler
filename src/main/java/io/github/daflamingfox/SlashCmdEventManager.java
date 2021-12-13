@@ -7,11 +7,22 @@ import org.javacord.api.interaction.SlashCommandInteraction;
 import org.javacord.api.interaction.SlashCommandPermissionsUpdater;
 import org.javacord.api.listener.interaction.SlashCommandCreateListener;
 
+/**
+ * Slash command event manager.
+ * Creates and listens for the slash command that it is assigned.
+ *
+ * @author Jeffrey Morris
+ */
 public class SlashCmdEventManager implements SlashCommandCreateListener {
 
     private long commandId;
     private SlashCmd cmd;
 
+    /**
+     * Constructor.
+     *
+     * @param cmd the slash command to listen for.
+     */
     public SlashCmdEventManager(DiscordApi api, SlashCmd cmd) {
         this.cmd = cmd;
 
@@ -49,6 +60,11 @@ public class SlashCmdEventManager implements SlashCommandCreateListener {
         commandId = Long.parseLong(cmdId.toString());
     }
 
+    /**
+     * The listener for if the command should be activated.
+     *
+     * @param event the event created to check.
+     */
     @Override
     public void onSlashCommandCreate(SlashCommandCreateEvent event) {
         SlashCommandInteraction sci = event.getSlashCommandInteraction();

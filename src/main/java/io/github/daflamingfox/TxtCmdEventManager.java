@@ -4,14 +4,31 @@ import java.util.Arrays;
 import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
 
+/**
+ *
+ * Text command Event Manager
+ * Creates and listens for the text command it is assigned to.
+ *
+ * @author Jeffrey Morris
+ */
 public class TxtCmdEventManager implements MessageCreateListener {
 
     private final TxtCmd command;
 
+    /**
+     * Creates a new Text Command Event Manager.
+     *
+     * @param command The text command to listen for.
+     */
     public TxtCmdEventManager(TxtCmd command) {
         this.command = command;
     }
 
+    /**
+     * Called when a message is created.
+     *
+     * @param event The event.
+     */
     @Override
     public void onMessageCreate(MessageCreateEvent event) {
         // ignore bots

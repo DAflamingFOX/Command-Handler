@@ -21,7 +21,7 @@ public interface CmdExecutor {
      *
      * Executes the slash command.
      *
-     * @param interaction The interaction for the command.
+     * @param sci The interaction for the command.
      */
     public void slashExecute(SlashCommandInteraction sci);
 }

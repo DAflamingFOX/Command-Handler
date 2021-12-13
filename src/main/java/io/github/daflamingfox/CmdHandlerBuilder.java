@@ -28,7 +28,6 @@ public class CmdHandlerBuilder {
      * @param api the discord api of your bot
      * @param prefix the prefix to use for text commands.
      *
-     * @see {@link org.javacord.api.DiscordApi}
      */
     public CmdHandlerBuilder(final DiscordApi api, final String prefix) {
         this.api = api;

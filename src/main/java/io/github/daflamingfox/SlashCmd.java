@@ -32,7 +32,7 @@ public class SlashCmd {
      * @param server The server the command is on.
      * @param executor The executor of the command.
      *
-     * @see {@link java.util.Optional}
+     * @see Optional
      */
     public SlashCmd(
         String name,
@@ -76,7 +76,7 @@ public class SlashCmd {
      *
      * @return The options of the command.
      *
-     * @see {@link java.util.Optional}
+     * @see Optional
      */
     public Optional<List<SlashCommandOption>> getOptions() {
         return options;
@@ -88,7 +88,7 @@ public class SlashCmd {
      *
      * @return The permissions of the command.
      *
-     * @see {@link java.util.Optional}
+     * @see Optional
      */
     public Optional<List<SlashCommandPermissions>> getPermissions() {
         return permissions;
@@ -100,7 +100,7 @@ public class SlashCmd {
      *
      * @return The server the command is on.
      *
-     * @see {@link java.util.Optional}
+     * @see Optional
      */
     public Optional<Server> getServer() {
         return server;

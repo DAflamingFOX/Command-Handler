@@ -1,3 +1,4 @@
+![Maven Verify Lifecycle](https://github.com/DAflamingFOX/Command-Handler/actions/workflows/maven-verify.yml/badge.svg) ![Maven Central](https://img.shields.io/maven-central/v/io.github.daflamingfox/command-handler) ![Lines of code](https://img.shields.io/tokei/lines/github/DAflamingFOX/Command-Handler) 
 # command-Handler
 
 This is a command handler for [Javacord](https://github.com/Javacord/Javacord)

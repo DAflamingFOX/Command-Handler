@@ -19,6 +19,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        server-id: ossrh
+        server-username: MAVEN_USERNAME
+        server-password: MAVEN_PASSWORD
         
     - name: Set up JDK 11
       uses: actions/setup-java@v2
@@ -32,13 +36,10 @@ jobs:
         gpg_private_key: ${{ secrets.GPG_SIGNING_KEY }}
         
     - name: Set version from tag
-      run: mvn -B versions:set -DnewVersion=$GITHUB_REF_NAME --file pom.xml
-
-    - name: Verify
-      run: mvn -B -q verify --file pom.xml
+      run: mvn -B -q versions:set -DnewVersion=$GITHUB_REF_NAME
       
     - name: Publish package
-      run: mvn -B deploy -P release --file pom.xml
+      run: mvn -B clean deploy -P release
       env:
         MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
         MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}

@@ -36,10 +36,10 @@ jobs:
         gpg_private_key: ${{ secrets.GPG_SIGNING_KEY }}
         
     - name: Set version from tag
-      run: mvn -B -q versions:set -DnewVersion=$GITHUB_REF_NAME --file pom.xml
+      run: mvn -B -q versions:set -DnewVersion=$GITHUB_REF_NAME
       
     - name: Publish package
-      run: mvn -B clean deploy -P release --file pom.xml
+      run: mvn -B clean deploy -P release
       env:
         MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
         MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}

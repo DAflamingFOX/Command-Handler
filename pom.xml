@@ -81,7 +81,7 @@
                         <inputGlob>src/test/java/**/*.java</inputGlob>
                     </inputGlobs>
                 </configuration>
-                <version>0.16</version>
+                <version>0.17</version>
                 <executions>
                     <execution>
                         <?m2e execute onConfiguration?>
